@@ -42,7 +42,7 @@ defmodule Timex.Ecto.Time do
     load({h, mm, s, us})
   end
   def cast(input) do
-    case Ecto.Time.cast(input) do
+    case Time.cast(input) do
       {:ok, time} -> load({time.hour, time.min, time.sec, time.usec})
       :error -> :error
     end

@@ -23,7 +23,7 @@ defmodule Timex.Ecto.Date.Test do
   end
 
   test "load/1 with an Ecto.Date should return a Timex date" do
-    ecto_date = Ecto.Date.from_erl({2017, 2, 12})
+    ecto_date = Date.from_erl({2017, 2, 12})
     assert Timex.Ecto.Date.load(ecto_date) == {:ok, Timex.to_date({2017, 2, 12})}
   end
 end

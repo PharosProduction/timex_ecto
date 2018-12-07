@@ -51,7 +51,7 @@ defmodule Timex.Ecto.TimeTest do
   end
 
   test "cast on date" do
-    date = %Ecto.Time{hour: 12, min: 30, sec: 1}
+    date = %Time{hour: 12, min: 30, sec: 1}
     assert Time.cast(date) == {:ok, Duration.from_erl({0, 45001, 0})}
   end
 

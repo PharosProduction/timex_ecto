@@ -19,7 +19,7 @@ defmodule Timex.Ecto.Date do
     {:ok, date}
   end
   def cast(date) when is_binary(date) do
-    case Ecto.Date.cast(date) do
+    case Date.cast(date) do
       {:ok, d} -> load({d.year,d.month,d.day})
       :error -> :error
     end
@@ -27,7 +27,7 @@ defmodule Timex.Ecto.Date do
   def cast(datetime) do
     case Timex.to_date(datetime) do
       {:error, _} ->
-        case Ecto.Date.cast(datetime) do
+        case Date.cast(datetime) do
           {:ok, date} -> load({date.year, date.month, date.day})
           :error -> :error
         end
@@ -45,7 +45,7 @@ defmodule Timex.Ecto.Date do
   ## Examples
      Using an Ecto.Date:
 
-      iex> Ecto.Date.from_erl({2017, 2, 1})
+      iex> Date.from_erl({2017, 2, 1})
       ...> |> Timex.Ecto.Date.load
       {:ok, ~D[2017-02-01]}
 
@@ -55,7 +55,7 @@ defmodule Timex.Ecto.Date do
       {:ok, ~D[2017-02-01]}
   """
   def load({_year, _month, _day} = date), do: {:ok, Timex.to_date(date)}
-  def load(%Ecto.Date{} = date), do: {:ok, Ecto.Date.to_erl(date) |> Timex.to_date}
+  def load(%Date{} = date), do: {:ok, Date.to_erl(date) |> Timex.to_date}
   def load(_), do: :error
 
   @doc """
