@@ -1,3 +1,6 @@
+By [Dmytro Nasyrov, Founder, CTO at Pharos Production Inc.](https://www.linkedin.com/in/dmytronasyrov/)
+And [Pharos Production Inc. - Web3, blockchain, fintech, defi software development services](https://pharosproduction.com)
+
 ## Timex Plugin for Ecto
 
 [![Master](https://travis-ci.org/bitwalker/timex_ecto.svg?branch=master)](https://travis-ci.org/bitwalker/timex_ecto)
